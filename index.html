@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>FlavorPoints App</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#22c3a8",
+              "primary-dark": "#1aa68f",
+              "background-light": "#fafaf9",
+              "background-dark": "#21262c",
+              "surface-light": "#ffffff",
+              "surface-dark": "#2d333b",
+              "accent-gold": "#E8D4A8",
+              "accent-gold-dark": "#C9AE75",
+              "text-primary": "#0f1a18",
+              "text-secondary": "#539388",
+              "gold-accent": "#BFA15F", 
+              "gold-bg": "#F9F5EA",
+            },
+            fontFamily: {
+              "display": ["Noto Sans SC", "Plus Jakarta Sans", "sans-serif"],
+              "body": ["Noto Sans SC", "Plus Jakarta Sans", "sans-serif"],
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
+              "3xl": "1.5rem",
+              "full": "9999px"
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+              'card': '0 2px 8px rgba(0,0,0,0.04)',
+              'floating': '0 8px 30px rgba(34, 195, 168, 0.25)',
+              'float': '0 10px 40px -10px rgba(34, 195, 168, 0.15)',
+              'glow': '0 0 15px rgba(34, 195, 168, 0.3)',
+              'inner-light': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)'
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      body {
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Material Symbols Adjustment */
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+
+      /* Global Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Dark mode scrollbar */
+      .dark ::-webkit-scrollbar-thumb {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Utility to hide scrollbar explicitly */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      /* Compatibility for explicit custom scrollbar class if needed, maps to global styles */
+      .custom-scrollbar {
+        /* Intentionally empty as global styles apply */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background-light dark:bg-background-dark text-slate-900 font-display antialiased selection:bg-primary/30">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
