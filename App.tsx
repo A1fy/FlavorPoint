@@ -80,7 +80,25 @@ const App: React.FC = () => {
 
         try {
             await checkout(finalPrice, usedCoupon);
-            navigate(Screen.Orders);
+
+            // 显示成功提示
+            const message = document.createElement('div');
+            message.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <div>
+                        <p class="font-bold">支付成功</p>
+                        <p class="text-sm">已扣除 ${finalPrice} 积分</p>
+                    </div>
+                </div>
+            `;
+            message.className = 'fixed top-20 left-1/2 -translate-x-1/2 bg-green-500 text-white px-6 py-4 rounded-xl shadow-2xl z-50 animate-bounce';
+            document.body.appendChild(message);
+
+            setTimeout(() => {
+                message.remove();
+                navigate(Screen.Orders);
+            }, 2000);
         } catch (error) {
             console.error('结账失败:', error);
             alert('结账失败，请重试');

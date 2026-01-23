@@ -5,13 +5,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
-import Dashboard from './pages/Dashboard';
-import Products from './pages/Products';
-import Categories from './pages/Categories';
-import Orders from './pages/Orders';
-import Users from './pages/Users';
-import Coupons from './pages/Coupons';
-import Settings from './pages/Settings';
+import Dashboard from '@/pages/Dashboard';
+import Products from '@/pages/Products';
+import Categories from '@/pages/Categories';
+import Orders from '@/pages/Orders';
+import Users from '@/pages/Users';
+import Coupons from '@/pages/Coupons';
+import Settings from '@/pages/Settings';
 
 const App: React.FC = () => {
     return (

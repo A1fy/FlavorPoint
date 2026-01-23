@@ -63,7 +63,7 @@ export async function addToCart(
     product: Product,
     size: 'standard' | 'large' = 'standard'
 ): Promise<void> {
-    const price = size === 'large' ? product.price + 200 : product.price;
+    const price = size === 'large' ? product.price + 20 : product.price;
 
     // 尝试更新已存在的购物车项
     const { data: existingItem, error: fetchError } = await supabase

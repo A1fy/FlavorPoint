@@ -155,7 +155,7 @@ const Dashboard: React.FC = () => {
                 />
                 <StatCard
                     title="今日收入"
-                    value={`¥${stats.todayRevenue}`}
+                    value={`$${stats.todayRevenue}`}
                     icon="payments"
                     trend="+8.5%"
                     trendUp={true}
@@ -199,7 +199,7 @@ const Dashboard: React.FC = () => {
                                         borderRadius: '8px',
                                         boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
                                     }}
-                                    formatter={(value: number) => [`¥${value}`, '收入']}
+                                    formatter={(value: number) => [`$${value}`, '收入']}
                                 />
                                 <Area
                                     type="monotone"
@@ -261,7 +261,7 @@ const Dashboard: React.FC = () => {
                                         </p>
                                     </div>
                                     <div className="text-right">
-                                        <p className="font-semibold text-gray-800">¥{order.final_price}</p>
+                                        <p className="font-semibold text-gray-800">${order.final_price}</p>
                                         <span className={`badge ${order.status === 'completed' ? 'badge-success' : 'badge-warning'}`}>
                                             {order.status === 'completed' ? '已完成' : '待处理'}
                                         </span>
@@ -296,11 +296,11 @@ const Dashboard: React.FC = () => {
                                     />
                                     <div className="flex-1 min-w-0">
                                         <p className="font-medium text-gray-800 truncate">{product.name}</p>
-                                        <p className="text-sm text-gray-500">¥{product.price}</p>
+                                        <p className="text-sm text-gray-500">${product.price}</p>
                                     </div>
                                     {product.tag_type && (
                                         <span className={`badge ${product.tag_type === 'hot' ? 'badge-danger' :
-                                                product.tag_type === 'new' ? 'badge-info' : 'badge-warning'
+                                            product.tag_type === 'new' ? 'badge-info' : 'badge-warning'
                                             }`}>
                                             {product.tag_type === 'hot' ? '热门' :
                                                 product.tag_type === 'new' ? '新品' : '售罄'}
