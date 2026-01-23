@@ -7,7 +7,7 @@ import { DbOrder, DbOrderItem } from '../lib/database.types';
 import { Order, CartItem, Coupon } from '@/types';
 import { clearCart } from './cartService';
 import { updateUserPoints } from './userService';
-import { addPointsTransaction } from './pointsService';
+import { addPointsTransaction } from '@/src/services/pointsService';
 import { markCouponAsUsed } from './couponService';
 
 /**
