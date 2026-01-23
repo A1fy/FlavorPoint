@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import type { Order, OrderItem } from '@/types';
+import type { Order } from '@/types';
 
 // 订单详情弹窗
 interface OrderDetailProps {
@@ -217,8 +217,8 @@ const Orders: React.FC = () => {
                         key={opt.value}
                         onClick={() => setFilterStatus(opt.value)}
                         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${filterStatus === opt.value
-                                ? 'bg-primary text-white'
-                                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                            ? 'bg-primary text-white'
+                            : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                             }`}
                     >
                         {opt.label}
