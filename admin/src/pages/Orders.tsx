@@ -87,7 +87,7 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ order, onClose, onStatusChang
                                             {item.size === 'large' ? '大份' : '标准'} × {item.quantity}
                                         </p>
                                     </div>
-                                    <span className="font-medium text-gray-800">¥{item.price * item.quantity}</span>
+                                    <span className="font-medium text-gray-800">${item.price * item.quantity}</span>
                                 </div>
                             ))}
                         </div>
@@ -97,17 +97,17 @@ const OrderDetail: React.FC<OrderDetailProps> = ({ order, onClose, onStatusChang
                     <div className="border-t border-gray-100 pt-4 space-y-2">
                         <div className="flex justify-between text-sm">
                             <span className="text-gray-500">商品总价</span>
-                            <span className="text-gray-800">¥{order.total_price}</span>
+                            <span className="text-gray-800">${order.total_price}</span>
                         </div>
                         {order.discount_amount > 0 && (
                             <div className="flex justify-between text-sm">
                                 <span className="text-gray-500">优惠金额</span>
-                                <span className="text-green-600">-¥{order.discount_amount}</span>
+                                <span className="text-green-600">-${order.discount_amount}</span>
                             </div>
                         )}
                         <div className="flex justify-between font-semibold text-lg pt-2 border-t border-gray-100">
                             <span className="text-gray-800">实付金额</span>
-                            <span className="text-primary">¥{order.final_price}</span>
+                            <span className="text-primary">${order.final_price}</span>
                         </div>
                     </div>
 
@@ -201,7 +201,7 @@ const Orders: React.FC = () => {
                 <div className="card !p-4">
                     <p className="text-sm text-gray-500">总收入</p>
                     <p className="text-2xl font-bold text-primary">
-                        ¥{orders.reduce((acc, o) => acc + o.final_price, 0)}
+                        ${orders.reduce((acc, o) => acc + o.final_price, 0)}
                     </p>
                 </div>
             </div>
@@ -252,7 +252,7 @@ const Orders: React.FC = () => {
                                     {(order.order_items || []).reduce((acc, item) => acc + item.quantity, 0)} 件
                                 </td>
                                 <td className="table-cell font-medium text-gray-800">
-                                    ¥{order.final_price}
+                                    ${order.final_price}
                                 </td>
                                 <td className="table-cell">
                                     <span className={`badge ${order.status === 'completed' ? 'badge-success' : 'badge-warning'}`}>
@@ -299,7 +299,7 @@ const Orders: React.FC = () => {
                             <span className="text-sm text-gray-500">
                                 {(order.order_items || []).reduce((acc, item) => acc + item.quantity, 0)} 件商品
                             </span>
-                            <span className="font-semibold text-primary">¥{order.final_price}</span>
+                            <span className="font-semibold text-primary">${order.final_price}</span>
                         </div>
                     </div>
                 ))}

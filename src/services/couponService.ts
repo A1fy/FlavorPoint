@@ -64,6 +64,13 @@ export async function getUserCoupons(): Promise<Coupon[]> {
  * 领取优惠券
  */
 export async function claimCoupon(couponId: string): Promise<void> {
+    // 先检查是否已领取
+    const alreadyClaimed = await hasClaimedCoupon(couponId);
+    if (alreadyClaimed) {
+        console.log('该优惠券已领取');
+        return;
+    }
+
     const { error } = await supabase
         .from('user_coupons')
         .insert({
@@ -73,7 +80,7 @@ export async function claimCoupon(couponId: string): Promise<void> {
         });
 
     if (error) {
-        // 如果是重复领取错误，忽略
+        // 如果是重复领取错误（可能是并发情况），忽略
         if (error.code === '23505') {
             return;
         }

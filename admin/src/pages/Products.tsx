@@ -342,7 +342,7 @@ const Products: React.FC = () => {
                                 <td className="table-cell">
                                     {categories.find((c) => c.id === product.category)?.name || product.category}
                                 </td>
-                                <td className="table-cell font-medium">¥{product.price}</td>
+                                <td className="table-cell font-medium">${product.price}</td>
                                 <td className="table-cell">
                                     {product.tag_type && (
                                         <span className={`badge ${product.tag_type === 'hot' ? 'badge-danger' :
@@ -415,7 +415,7 @@ const Products: React.FC = () => {
                                 </div>
                                 <div className="flex items-center justify-between mt-2">
                                     <div className="flex items-center gap-3">
-                                        <span className="font-semibold text-primary">¥{product.price}</span>
+                                        <span className="font-semibold text-primary">${product.price}</span>
                                         <div className="flex items-center gap-1 text-sm text-gray-500">
                                             <span className="material-icons text-yellow-500 text-sm">star</span>
                                             {product.rating || '-'}
