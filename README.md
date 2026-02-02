@@ -1,11 +1,5 @@
 # FlavorPoint
 
-简体中文说明文档（README）。  
-仓库描述：This is a simple software for exchanging goods through point accumulation.  
-主要语言：TypeScript（前端/后端均可能采用 TS）
-
----
-
 ## 一句话概述
 
 FlavorPoint 是一个基于积分（points）机制的商品兑换/流通系统，用户累计积分后可用来兑换商品或在平台上进行交易。该仓库以 TypeScript 为主，适合作为小型社区积分商城或待办兑换平台的基础实现。
